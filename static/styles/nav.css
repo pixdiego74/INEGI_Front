@@ -1,0 +1,11 @@
+nav {
+    background-color: #1E1E1E;
+    padding: 20px 0;
+}
+
+img {
+    width: 70px;
+    height: auto;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}

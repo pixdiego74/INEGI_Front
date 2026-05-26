@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'Helvetica Black Original';
+  src: url('../fonts/helveticablackoriginal_bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica-Black';
+  src: url('../fonts/helvetica\black.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url(../fonts/Helvetica.ttf) format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+footer {
+    background-color: #003057;
+    padding: 20px 0;
+}
+
+footer .footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+footer .CONOCIENDO {
+    font-family: 'Helvetica Black Original';
+    font-weight: bold;
+    color: white;
+    font-size: 23px;
+    margin: 0;
+}
+footer .MEXICO {
+    font-family: 'Helvetica Black Original';
+    font-weight: bold;
+    color: white;
+    font-size: 42px;
+    margin: 0;
+}
+
+footer .atencion {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+    margin: 10px 0;
+}
+footer .punto {
+    font-family: 'Helvetica-Black';
+    color: white;
+    font-size: 18px;
+}
+
+footer .redes {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+        margin-top: 5px;
+}
+footer .redes img {
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+footer .inegi {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 18px;
+}
+footer .org {
+    font-family: 'Helvetica';
+    color: white;
+    font-size: 18px;
+}

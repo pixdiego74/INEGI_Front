@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'Helvetica';
+    src: url(../fonts/Helvetica.ttf) format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Light';
+    src: url(../fonts/helvetica-light.ttf) format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root{
+    --backgroundTexture: url();
+}
+
+body {
+    background-color: #08989C;
+    padding: 20px 0;
+}
+body .body-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+body .te {
+    font-family: 'Helvetica';
+    font-weight: bold;
+    color: white;
+    font-size: 7px;
+    margin: 0;
+}
