@@ -2,11 +2,25 @@
     <div class="body-container">
         <div class="bienvenida">
             <p class="te">¡Te damos la bienvenida!</p>
-            <p class="Reconócelo">Reconócelo</p>
+            <p class="reconocelo">Reconócelo</p>
         </div>
-        <div class="camara"></div>
-        <div class="id"></div>
-        <div class="button-foto"></div>
-        <div class="button-ayuda"></div>
+
+        <div class="camara-visor"></div>
+
+        <div class="id">
+            <input type="number" pattern="[0-9]" maxlength="8" placeholder="Ingresa ID" required>
+        </div>
+        
+        <div class="button-foto">
+            <button type="submit">
+                Tomar foto
+            </button>
+        </div>
+        <br><br>
+        <div class="button-ayuda">
+            <button popovertarget="ayuda-popup">
+                Ayuda
+            </button>
+        </div>
     </div>
 </body>
