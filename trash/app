@@ -1,0 +1,17 @@
+@app.route("/verificar", methods=["POST"])
+def verificar():
+    data = request.get_json()  # CORREGIDO: era request.json()
+    id_user = data.get("id")
+    
+    user = next((u for u in mock_usuarios if u["id"] == int(id_user)), None)
+    
+    if user:
+        return jsonify({
+            "encontrado": True,
+            "usuario": user
+        })
+    else:  # CORREGIDO: indentación
+        return jsonify({
+            "encontrado": False,
+            "mensaje": "ID no encontrado. Verifica que sea correcto."
+        }), 404

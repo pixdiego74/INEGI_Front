@@ -4,22 +4,42 @@
             <p class="te">¡Te damos la bienvenida!</p>
             <p class="reconocelo">Reconócelo</p>
         </div>
-
+        
         <div class="camara-visor"></div>
-
+        
         <div class="id">
-            <input type="number" pattern="[0-9]" maxlength="8" placeholder="Ingresa ID" required>
+            <input type="number" id="id-input" pattern="[0-9]{8}" maxlength="8" placeholder="Ingresa ID" required>
         </div>
         
         <div class="button-foto">
-            <button type="submit">
-                Tomar foto
+            <button type="submit" id="verificar" action="/verificar">Verificar</button>
+        </div><br><br>
+
+        <div class="button-ayuda">
+            <button popovertarget="popover-ayuda">
+                Ayuda
             </button>
         </div>
-        <br><br>
-        <div class="button-ayuda">
-            <button popovertarget="ayuda-popup">
-                Ayuda
+
+        <div id="popover-ayuda" class="popover" popover>
+            <h3>¿Necesitas ayuda?</h3>
+            <p>Bienvenido a Reconócelo.</p>
+            <p>Una app hecha por y para los trabajadores miembros del INEGI.
+                Esta aplicacion web cuenta con un sistema de reconocimienot facial y búsqueda por ID de los usuarios registrados.
+            </p><br>
+            <p>Tiene 2 modalidades de uso:
+            </p>
+            <p>1-QR: El QR entregado al personal del INEGI llevará directamente al portal de la página Reconócelo,
+                donde solo será falta de una fotografia del encuestador para verificar su identidad y labor dentro de la entidad.
+            </p>
+            <p>2-Búsqueda directa por internet: A diferencia de la entreda a la pagina por medio del QR,
+                aquí será necesario la introducción del ID  del trabajador.
+            </p><br>
+            <p>Para tener el mayor provecho de la página,
+                favor de seguir las indicaciones sugeridas en el aviso de uso.
+            </p><br>
+            <button popovertarget="popover-ayuda" popovertargetaction="hide">
+                <img class="cerrar" src="/static/styles/images/cancelar.png" alt="cerrar">
             </button>
         </div>
     </div>

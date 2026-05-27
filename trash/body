@@ -1,0 +1,136 @@
+    <script>
+        // Función para cargar el componente card.html
+        async function cargarComponenteTarjeta() {
+            try {
+                const response = await fetch("/user_card.html");
+                const html = await response.text();
+                document.getElementById('user-card-container').innerHTML = html;
+            } catch (error) {
+                console.error('Error cargando componente:', error);
+            }
+        }
+
+        // Función para mostrar la tarjeta con datos del usuario
+        function mostrarTarjeta(usuario) {
+            const tarjeta = document.getElementById('tarjeta-usuario');
+            if (!tarjeta) return;
+            
+            // Llenar los datos
+            document.getElementById('photo').src = usuario.photo;
+            document.getElementById('photo').alt = `Foto de ${usuario.name} ${usuario.last_names}`;
+            document.getElementById('name').textContent = `${usuario.name}`;
+            document.getElementById('last_names').textContent = `${usuario.last_names}`;
+            document.getElementById('description').textContent = usuario.description;
+            document.getElementById('job').textContent = usuario.job;
+            
+            // Mostrar la tarjeta
+            tarjeta.style.display = 'block';
+            
+            // Scroll suave hasta la tarjeta
+            tarjeta.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Función para mostrar error
+        function mostrarError(mensaje) {
+            const tarjeta = document.getElementById('tarjeta-usuario');
+            if (tarjeta) {
+                tarjeta.style.display = 'none';
+            }
+            
+            // Crear o actualizar mensaje de error
+            let errorDiv = document.querySelector('.error-mensaje');
+            if (!errorDiv) {
+                errorDiv = document.createElement('div');
+                errorDiv.className = 'error-mensaje';
+                document.querySelector('.body-container').appendChild(errorDiv);
+            }
+            
+            errorDiv.innerHTML = `
+                <p>❌ ${mensaje}</p>
+                <p>IDs válidos para prueba: <strong>747474</strong>, <strong>414141</strong>, <strong>676767</strong></p>
+                <button onclick="this.remove()">Cerrar</button>
+            `;
+            
+            // Auto-cerrar después de 5 segundos
+            setTimeout(() => {
+                if (errorDiv) errorDiv.remove();
+            }, 5000);
+        }
+
+        // Función para verificar ID
+        async function verificarID() {
+            const idInput = document.getElementById('id-input');
+            const id = idInput.value.trim();
+            
+            if (!id) {
+                mostrarError('Por favor, ingresá un ID.');
+                return;
+            }
+            
+            if (id.length !== 6 && id.length !== 8) {
+                mostrarError('El ID debe tener 6 u 8 dígitos.');
+                return;
+            }
+            
+            // Mostrar loading
+            const tarjeta = document.getElementById('tarjeta-usuario');
+            if (tarjeta) tarjeta.style.display = 'none';
+            
+            let loadingDiv = document.querySelector('.loading');
+            if (!loadingDiv) {
+                loadingDiv = document.createElement('div');
+                loadingDiv.className = 'loading';
+                document.querySelector('.body-container').appendChild(loadingDiv);
+            }
+            loadingDiv.innerHTML = '<p>🔍 Verificando ID...</p>';
+            loadingDiv.style.display = 'block';
+            
+            try {
+                const response = await fetch('/verificar', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ id: id })
+                });
+                
+                const data = await response.json();
+                loadingDiv.style.display = 'none';
+                
+                if (response.ok && data.encontrado) {
+                    mostrarTarjeta(data.usuario);
+                    // Limpiar error si existe
+                    const errorDiv = document.querySelector('.error-mensaje');
+                    if (errorDiv) errorDiv.remove();
+                } else {
+                    mostrarError(data.mensaje || 'ID no encontrado.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                loadingDiv.style.display = 'none';
+                mostrarError('Error de conexión. Intentá de nuevo.');
+            }
+        }
+        
+        // Inicializar cuando carga la página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cargar el componente de tarjeta
+            cargarComponenteTarjeta();
+            
+            // Evento click del botón
+            const verificarBtn = document.getElementById('verificar-btn');
+            if (verificarBtn) {
+                verificarBtn.addEventListener('click', verificarID);
+            }
+            
+            // Evento Enter en el input
+            const idInput = document.getElementById('id-input');
+            if (idInput) {
+                idInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        verificarID();
+                    }
+                });
+            }
+        });
+    </script>

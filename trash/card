@@ -1,0 +1,25 @@
+        <!-- Contenedor para la tarjeta de usuario (se carga desde component) -->
+         <div class="tarjeta-usuario" id="tarjeta-usuario" style="display: none;">
+            <div class="logos">
+                <div class="gobierno">
+                    <img src="../static/styles/images/gobierno.png" alt="gobierno" id="gobierno">
+                </div>
+                <div class="oficial_inegi">
+                    <img src="../static/styles/images/inegi.png" alt="INEGI" id="INEGI">
+                </div>
+            </div>
+            
+            <div class="info">
+                <div class="evento">
+                    <img src="../static/styles/images/evento.png" alt="evento" id="evento">
+                </div>
+                <div class="rostro">
+                    <img src="" alt="photo" id="photo">
+                </div>
+            </div>
+            <div class="name" id="name"></div>
+            <div class="last_names" id="last_names"></div>
+            <div class="description" id="description"></div>
+            <div class="job" id="job"></div>
+        </div>
+    </div>
