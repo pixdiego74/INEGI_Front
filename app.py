@@ -13,9 +13,9 @@ app.jinja_loader = ChoiceLoader([
 def index():
     return render_template("index.html")
 
-@app.route("/verificar")
-def verificar():
-    identificacion = request.
+#@app.route("/verificar")
+#def verificar():
+#    identificacion = request.
     #No se como seguirle aqui XDDDDDDDDDD
 
 if __name__ == '__main__':

@@ -190,36 +190,3 @@ input[type=number] {
     width: 20px;
     height: auto;
 }
-
-.tarjeta-usuario {
-    display: none;
-    width: 100%;
-    max-width: 200px;
-    border-radius: 20px;
-    border: 2px solid white;
-    transition: all 0.3s ease;
-}
-.gobierno img, .oficial_inegi img {
-    align-items: center;
-    width: 20px;
-    height: auto;
-    cursor: pointer;
-    filter: brightness(0) invert(1);
-}
-.evento img, .rostro img {
-    align-items: center;
-    width: 20px;
-    height: auto;
-    cursor: pointer;
-    filter: brightness(0) invert(1);
-}
-.name, .last_name {
-    font-family: 'Helvetica';
-    color: white;
-    font-size: 14px;
-}
-.description, .job {
-        font-family: 'Helvetica';
-    color: white;
-    font-size: 10px;
-}
