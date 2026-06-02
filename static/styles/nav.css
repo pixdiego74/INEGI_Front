@@ -1,6 +1,14 @@
 nav {
     background-color: #1E1E1E;
     padding: 10px 0;
+    transform: translateY(-100px);
+    animation: deslizarEntrar 1s ease-out forwards;
+}
+
+@keyframes deslizarEntrar {
+  to {
+    transform: translateY(0);
+  }
 }
 
 .inegi_logo{

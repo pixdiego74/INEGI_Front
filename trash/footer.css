@@ -22,7 +22,15 @@
 footer {
     background-color: #003057;
     padding: 20px 0;
+    transform: translateY(300px);
+    animation: deslizarEntrar 1s ease-out forwards;
 }
+@keyframes deslizarEntrar {
+  to {
+    transform: translateY(0);
+  }
+}
+
 
 footer .footer-container {
     display: flex;

@@ -42,7 +42,6 @@ body > * {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
     padding: 20px;
     gap: 20px;
 }
@@ -54,6 +53,8 @@ body .te {
     font-size: 30px;
     margin: 0;
     text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
 }
 body .reconocelo {
     font-family: 'Helvetica Light', Arial, sans-serif;
@@ -61,7 +62,10 @@ body .reconocelo {
     font-size: 40px;
     margin: 0;
     text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
 }
+
 .bienvenida {
     text-align: center;
     margin-bottom: 20px;
@@ -80,6 +84,8 @@ input[type=number] {
 .id {
     width: 100%;
     max-width: 200px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
 }
 .id input {
     border-radius: 20px;
@@ -105,6 +111,8 @@ input[type=number] {
 }
 
 .button-foto {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
     width: 100%;
     max-width: 110px;
 }
@@ -126,6 +134,8 @@ input[type=number] {
 }
 
 .button-ayuda {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
     width: 100%;
     max-width: 110px;
 }
@@ -147,6 +157,8 @@ input[type=number] {
 }
 
 .camara-visor {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
     width: 100%;
     max-width: 400px;
     height: 300px;
@@ -190,3 +202,25 @@ input[type=number] {
     width: 20px;
     height: auto;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.form{
+    width: max-content;
+    height: auto;
+    padding: 10px;
+}
+
+.te:nth-child(1){animation-delay: 1s;}
+.reconocelo:nth-child(2){animation-delay: 2s;}
+.camara-visor:nth-child(3){animation-delay: 10s;}
+.id:nth-child(4){animation-delay: 3.2s;}
+.button-foto:nth-child(5){animation-delay: 3.4s;}
+.button-ayuda:nth-child(6){animation-delay: 3.6s;}

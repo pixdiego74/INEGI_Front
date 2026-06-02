@@ -106,55 +106,42 @@
 @media (max-width: 550px) {
     .tarjeta-usuario {
         width: 95%;
+        max-width: 95%;
     }
     
+    .info {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .evento {
+        margin-left: 0;
+        justify-content: center;
+    }
     .encuesta {
-        width: 70px;
-        height: 70px;
+        width: 180px;
+        height: 90px;
+        object-fit: contain;
     }
-    
     .rostro {
-        width: 80px;
-        height: 80px;
+        width: 200px;
+        height: 250px;
+        justify-content: center;
+    }
+    .face {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     
     .oficial_inegi img {
-        height: 45px;
-    }
-    
-    #name {
-        font-size: 1rem;
-    }
-    
-    #last_name {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 450px) {
-    .info {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .encuesta {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .rostro {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .direction {
-        font-size: 0.75rem;
+        height: 50px;
     }
     
     .job {
-        font-size: 0.75rem;
+        font-size: 1.4rem;
     }
 }
+
 .tarjeta-usuario {
     display: block !important;
     position: relative;

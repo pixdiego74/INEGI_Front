@@ -4,23 +4,20 @@
             <p class="te">¡Te damos la bienvenida!</p>
             <p class="reconocelo">Reconócelo</p>
         </div>
-        
-        <div class="camara-visor"></div>
-        
-        <div class="id">
-            <input type="number" id="id-input" pattern="[0-9]{8}" maxlength="8" placeholder="Ingresa ID" required>
-        </div>
-        
-        <div class="button-foto">
-            <button type="submit" id="verificar" action="/verificar">Verificar</button>
-        </div><br><br>
 
+            <div class="camara-visor"></div>
+            <div class="id">
+                <input type="number" id="id-input" pattern="[0-9]{8}" maxlength="8" placeholder="Ingresa ID" required>
+            </div>
+            
+            <div class="button-foto">
+                <button type="submit">Verificar</button>
+            </div><br><br>
+        
         <div class="button-ayuda">
-            <button popovertarget="popover-ayuda">
-                Ayuda
-            </button>
+            <button popovertarget="popover-ayuda">Ayuda</button>
         </div>
-
+        
         <div id="popover-ayuda" class="popover" popover>
             <h3>¿Necesitas ayuda?</h3>
             <p>Bienvenido a Reconócelo.</p>
@@ -42,5 +39,4 @@
                 <img class="cerrar" src="/static/styles/images/cancelar.png" alt="cerrar">
             </button>
         </div>
-    </div>
 </body>
