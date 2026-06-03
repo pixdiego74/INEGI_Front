@@ -1,0 +1,1 @@
+hacer spinner y busqueda

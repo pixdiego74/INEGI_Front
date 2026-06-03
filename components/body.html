@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='/styles/body.css') }}">
 <body>
     <div class="body-container">
         <div class="bienvenida">
@@ -5,14 +6,17 @@
             <p class="reconocelo">Reconócelo</p>
         </div>
 
+        <form action="/verificar" method="POST" class="form"><!--Formulario de foto y id-->
             <div class="camara-visor"></div>
+            
             <div class="id">
-                <input type="number" id="id-input" pattern="[0-9]{8}" maxlength="8" placeholder="Ingresa ID" required>
+                <input type="tel" name="id-input" id="id-input" pattern="[0-9]{4}" maxlength="4" placeholder="Ingresa ID" value="{{id}}" required>
             </div>
             
             <div class="button-foto">
-                <button type="submit">Verificar</button>
+                <button type="submit" id="verificar">Verificar</button>
             </div><br><br>
+        </form>
         
         <div class="button-ayuda">
             <button popovertarget="popover-ayuda">Ayuda</button>
@@ -38,5 +42,5 @@
             <button popovertarget="popover-ayuda" popovertargetaction="hide">
                 <img class="cerrar" src="/static/styles/images/cancelar.png" alt="cerrar">
             </button>
-        </div>
+    </div>
 </body>

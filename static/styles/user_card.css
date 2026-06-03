@@ -68,22 +68,15 @@
     text-align: center;
     padding: 10px;
 }
-.adescription{
+.adscription{
     font-size: 1rem;
     color: #ffffff;
     margin: 0;
     font-weight: 600;
 }
-.direction {
-    font-size: 1rem;
-    color: #000000;
-    text-transform: uppercase;
-    margin: 0;
-    font-weight: 600;
-}
 .job {
     font-size: 1.3rem;
-    color: #000000;
+    color: #ffffff;
     margin: 5px 0 0 0;
     text-transform: uppercase;
     font-family: Helvetica, Arial, sans-serif;

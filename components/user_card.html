@@ -3,7 +3,9 @@
 -Descripcion/Puesto
 -Nombre
 -->
-<div class="tarjeta-usuario" id="tarjeta-usuario">
+<link rel="stylesheet" href="{{ url_for('static', filename='/styles/user_card.css') }}">
+
+<div class="tarjeta-usuario" id="tarjeta-usuario" {% if not usuario %}style="display: none;"{% endif %}>
     <div class="logo_ineginano">
         <div class="oficial_inegi">
             <img src="../static/styles/images/inegi.png" alt="INEGI" id="INEGI">
@@ -15,16 +17,31 @@
             <img src="../static/styles/images/encuesta.svg" alt="encuesta" id="encuesta" class="encuesta">
         </div>
         <div class="rostro">
-            <img src="../static/styles/faces/747474.png" alt="face" id="face" class="face">
+            {% if usuario %}
+                <img src="{{ usuario.photo }}" alt="face" id="face" class="face">
+            {% else %}
+                <img src="../static/styles/faces/default.png" alt="face" id="face" class="face">
+            {% endif %}
         </div>
     </div>
 
     <div class="description" id="description">
-        <p id="adescription" class="adescription">Adescripción <span id="direction" class="direction">DIRECCIÓN REGIONAL NORESTE</span></p><br>
-        <p id="job" class="job">ENTREVISTADOR</p>
+        {% if usuario %}
+            <p id="adscription" class="adscription">{{ usuario.adscription }}</p>
+            <p id="job" class="job">{{ usuario.job }}</p>
+        {% else %}
+            <p id="adscription" class="adscription">Sin datos disponibles</p>
+            <p id="job" class="job">---</p>
+        {% endif %}
     </div>
-    
+   
     <div class="fullname" id="fullname">
-        <p id="name" class="name">Gabriela</p><p id="last_name" class="last_name">Hernández Vázquez</p>
+        {% if usuario %}
+            <p id="name" class="name">{{ usuario.name }}</p>
+            <p id="last_name" class="last_name">{{ usuario.last_names }}</p>
+        {% else %}
+            <p id="name" class="name">---</p>
+            <p id="last_name" class="last_name">---</p>
+        {% endif %}
     </div>
 </div>
