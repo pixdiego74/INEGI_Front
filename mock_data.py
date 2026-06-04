@@ -3,7 +3,7 @@ mock_usuarios = [{
     "photo": "../static/styles/faces/4059.png",
     "name": "Diego",
     "last_names": "Cortez de la Cruz",
-    "adscription": "DIRECCION GENERAL DE INFORMATICA",
+    "adscription": "DIRECCIÓN GENERAL DE INFORMATICA",
     "job": "Programmer",
 },
 {
@@ -11,7 +11,7 @@ mock_usuarios = [{
     "photo": "../static/styles/faces/4186.png",
     "name": "Frida Yadira",
     "last_names": "Chavéz Villegas",
-    "adscription": "DIRECCION GENERAL DE INFORMATICA",
+    "adscription": "DIRECCIÓN GENERAL DE INFORMATICA",
     "job": "Programmer",
 },
 {
@@ -19,7 +19,7 @@ mock_usuarios = [{
     "photo": "../static/styles/faces/6767.png",
     "name": "Christian Alejandro",
     "last_names": "Veloz Jimenez",
-    "adscription": "DIRECCION GENERAL DE DISEÑO",
+    "adscription": "DIRECCIÓN GENERAL DE DISEÑO",
     "job": "Designer",
 }
 ]
