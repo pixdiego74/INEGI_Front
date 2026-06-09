@@ -33,9 +33,8 @@ def index():
 @app.route("/<int:id>")
 def mostrar_id(id):
     id_str = str(id).zfill(4)
-    # También puedes buscar el usuario por ID en la URL
-    usuario = buscar_usuario_por_id(id)
-    return render_template('index.html', usuario=usuario, id=id_str)
+
+    return render_template('index.html', id=id_str)
       
 @app.route("/verificar", methods=['POST'])
 def verificar():
