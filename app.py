@@ -51,3 +51,5 @@ def verificar():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+#Agregar App shell para carga mas rapida luego
